@@ -1,8 +1,6 @@
 import React from "react";
 import kheloLogo from "/src/assets/Logo.png";
-import indiaFlag from "/src/assets/india-flag-icon.svg";
-import nepalFlag from "/src/assets/nepal-flag-icon.svg";
-import bhutanFlag from "/src/assets/bhutan-flag-icon.svg";
+import Icon from "/src/assets/Player_icon.png";
 
 const MatchScheduleModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
@@ -10,22 +8,22 @@ const MatchScheduleModal = ({ isOpen, onClose }) => {
   const matches = {
     badminton: [
       {
-        team1: { name: "India", flag: indiaFlag },
-        team2: { name: "Nepal", flag: nepalFlag },
+        team1: { name: "India", icon: Icon },
+        team2: { name: "Nepal", icon: Icon },
         time: "10:00 AM",
         date: "2nd May 2025",
       },
       {
-        team1: { name: "Bhutan", flag: bhutanFlag },
-        team2: { name: "India", flag: indiaFlag },
+        team1: { name: "Bhutan", icon: Icon },
+        team2: { name: "India", icon: Icon },
         time: "1:00 PM",
         date: "2nd May 2025",
       },
     ],
     archery: [
       {
-        team1: { name: "Nepal", flag: nepalFlag },
-        team2: { name: "Bhutan", flag: bhutanFlag },
+        team1: { name: "Nepal", icon: Icon },
+        team2: { name: "Bhutan", icon: Icon },
         time: "3:00 PM",
         date: "2nd May 2025",
       },
@@ -43,7 +41,7 @@ const MatchScheduleModal = ({ isOpen, onClose }) => {
         </button>
 
         <div className="flex justify-center mb-6">
-          <img src={kheloLogo} alt="Khelo India Bihar" className="h-20" />
+          <img src={kheloLogo} alt="Khelo India Bihar" className="h-40" />
         </div>
 
         <h2 className="text-2xl font-bold text-center mb-4">Match Schedule</h2>
@@ -61,11 +59,19 @@ const MatchScheduleModal = ({ isOpen, onClose }) => {
                     className="flex items-center justify-between bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition"
                   >
                     <div className="flex items-center space-x-4">
-                      <img src={match.team1.flag} alt={match.team1.name} className="h-6 w-8 rounded-sm" />
+                      <img
+                        src={match.team1.icon}
+                        alt={match.team1.name}
+                        className="h-6 w-8 rounded-sm"
+                      />
                       <span className="font-medium">{match.team1.name}</span>
                       <span className="text-gray-500">vs</span>
                       <span className="font-medium">{match.team2.name}</span>
-                      <img src={match.team2.flag} alt={match.team2.name} className="h-6 w-8 rounded-sm" />
+                      <img
+                        src={match.team2.icon}
+                        alt={match.team2.name}
+                        className="h-6 w-8 rounded-sm"
+                      />
                     </div>
                     <div className="text-right text-sm text-gray-600">
                       <p>{match.date}</p>

@@ -1,8 +1,7 @@
 import React, { useState, useRef } from "react";
 import QRCode from "react-qr-code";
 import { toPng } from "html-to-image";
-import { v4 as uuidv4 } from "uuid";
-import SlotDropdownButton from "./SlotDropdownButton";
+
 import TicketLogo from "../assets/Logo.png"; // Replace with your logo path
 
 const generate8DigitId = () => {
@@ -15,7 +14,7 @@ const BookTicketForm = ({ handleClose }) => {
     email: "",
     phone: "",
     fatherName: "",
-    slot: localStorage.getItem("userSlot") || "",
+    slot:  "",
     address: "",
   });
 
@@ -65,14 +64,21 @@ const BookTicketForm = ({ handleClose }) => {
   
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/30 backdrop-blur flex justify-center items-center">
-       <button
-      onClick={handleClose}
-      className="absolute top-5 right-5 bg-red-500 hover:bg-red-600 text-white text-sm w-10 h-10 rounded-full flex items-center justify-center shadow-lg z-50"
-    >
-      ✖
-    </button>
+    <div className="fixed inset-0 z-50  bg-black/30 backdrop-blur flex justify-center items-center">
+       
       <div className="w-full max-w-3xl max-h-screen overflow-y-auto px-4 py-6 bg-white  shadow-lg rounded-2xl border border-slate-100 ">
+      <div className="relative">
+      <div className="absolute top-2 right-2">
+         <button
+           onClick={handleClose}
+           className="text-white text-sm w-10 h-10 rounded-full flex items-center justify-center  shadow"
+         >
+           ✖
+         </button>
+      </div>
+      </div>
+
+      
         <img
           src={TicketLogo}
           alt="Logo"
@@ -85,7 +91,7 @@ const BookTicketForm = ({ handleClose }) => {
           Fill in the details below to book your ticket for the Khelo India event.
         </p>
       {!showQR && (
- <form onSubmit={handleSubmit} className="space-y-4">
+ <form onSubmit={handleSubmit} className="space-y-4 px-10 ">
  {/* Group fields in pairs */}
  {[
    [

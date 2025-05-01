@@ -22,7 +22,7 @@ const PlayerDetailsModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black/20 bg-opacity-40 backdrop-blur-md z-50 flex items-center justify-center overflow-auto">
-      <div className="bg-white/40 backdrop-blur-3xl border border-gray-100 rounded-3xl shadow-2xl p-6 w-full max-w-5xl relative">
+      <div className="bg-white/80 backdrop-blur-3xl border border-gray-100 rounded-3xl shadow-2xl p-6 w-full max-w-5xl relative">
         <button
           className="absolute top-5 right-6 text-gray-400 hover:text-red-500 text-xl font-bold"
           onClick={onClose}
@@ -31,7 +31,7 @@ const PlayerDetailsModal = ({ isOpen, onClose }) => {
         </button>
 
         <div className="flex justify-center mb-6">
-          <img src={kheloLogo} alt="Khelo India Bihar" className="h-20" />
+          <img src={kheloLogo} alt="Khelo India Bihar" className="h-40" />
         </div>
 
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
